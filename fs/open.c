@@ -362,6 +362,12 @@ SYSCALL_DEFINE4(fallocate, int, fd, int, mode, loff_t, offset, loff_t, len)
  * We do this by temporarily clearing all FS-related capabilities and
  * switching the fsuid/fsgid around to the real ones.
  */
+#ifdef CONFIG_KSU_MANUAL_HOOK
+__attribute__((hot)) 
+extern int ksu_handle_faccessat(int *dfd, const char __user **filename_user,
+				int *mode, int *flags);
+#endif
+
 #ifdef CONFIG_KSU_SUSFS
 extern bool ksu_su_compat_enabled __read_mostly;
 extern bool __ksu_is_allow_uid_for_current(uid_t uid);
@@ -377,6 +383,10 @@ SYSCALL_DEFINE3(faccessat, int, dfd, const char __user *, filename, int, mode)
 	struct vfsmount *mnt;
 	int res;
 	unsigned int lookup_flags = LOOKUP_FOLLOW;
+
+#ifdef CONFIG_KSU_MANUAL_HOOK
+	ksu_handle_faccessat(&dfd, &filename, &mode, NULL);
+#endif
 
 #ifdef CONFIG_KSU_SUSFS
     if (likely(susfs_is_current_proc_umounted()) || !ksu_su_compat_enabled) {
