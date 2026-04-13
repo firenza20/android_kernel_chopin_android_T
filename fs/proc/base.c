@@ -2266,7 +2266,7 @@ proc_map_files_readdir(struct file *file, struct dir_context *ctx)
 	 * routine might require mmap_sem taken in might_fault().
 	 */
 
-		for (vma = mm->mmap, pos = 2; vma; vma = vma->vm_next) {
+	for (vma = mm->mmap, pos = 2; vma; vma = vma->vm_next) {
 		if (!vma->vm_file)
 			continue;
 #ifdef CONFIG_KSU_SUSFS_SUS_MAP
@@ -2295,9 +2295,9 @@ proc_map_files_readdir(struct file *file, struct dir_context *ctx)
 			if (!vma->vm_file)
 				continue;
 #ifdef CONFIG_KSU_SUSFS_SUS_MAP
-		inode = file_inode(vma->vm_file);
-		if (SUSFS_IS_INODE_SUS_MAP(inode))
-			continue;
+			inode = file_inode(vma->vm_file);
+			if (SUSFS_IS_INODE_SUS_MAP(inode))
+				continue;
 #endif
 			if (++pos <= ctx->pos)
 				continue;
