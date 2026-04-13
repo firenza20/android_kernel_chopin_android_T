@@ -1,50 +1,65 @@
 #!/bin/bash
+#
+# Compile script for Hydrogen kernel
+# Brought to you by rio004
+#
 
-function compile() 
-{
+# Date/Time
+SECONDS=0
+DATE=$(date '+%Y%m%d-%H%M')
 
-source ~/.bashrc && source ~/.profile
-export LC_ALL=C && export USE_CCACHE=1
-ccache -M 100G
-export ARCH=arm64
-export KBUILD_BUILD_HOST=MARKxDEVS
-export KBUILD_BUILD_USER="AbzRaider"
-git clone --depth=1  https://gitlab.com/LeCmnGend/proton-clang.git -b clang-13  clang
+# Device
+DEVICE="${1:-agate}"
+DEFCONFIG="${DEVICE}_defconfig"
+ZIPNAME="Tiramisu-MTK-${DEVICE}-${DATE}.zip"
 
+echo -e "Building for: $DEVICE\n"
 
-
- if ! [ -d "out" ]; then
-echo "Kernel OUT Directory Not Found . Making Again"
-mkdir out
+# Ensure the toolchain is available
+TC_DIR="$HOME/toolchains/proton-clang"
+CURRENT_DIR=$(pwd)
+if [ ! -d "$TC_DIR" ]; then
+  mkdir -p "$HOME/toolchains"
+  cd "$HOME/toolchains"
+  git clone --depth=1 https://gitlab.com/LeCmnGend/proton-clang.git -b clang-15 proton-clang
+  cd "$CURRENT_DIR"
 fi
+export PATH="$TC_DIR/bin:$PATH"
 
-make O=out ARCH=arm64 ares_user_defconfig
+# Process options
+CLEAN_BUILD=false
+INCLUDE_KSU=false
+for arg in "$@"; do
+  case $arg in
+  -c) CLEAN_BUILD=true ;;
+  -ksu)
+    INCLUDE_KSU=true
+    ZIPNAME="HydrogenKernel-KSU-${DEVICE}-${DATE}.zip"
+    ;;
+  esac
+done
 
-PATH="${PWD}/clang/bin:${PATH}:${PWD}/clang/bin:${PATH}:${PWD}/clang/bin:${PATH}" \
-make -j$(nproc --all) O=out \
-                      ARCH=arm64 \
-                      CC="clang" \
-                      CLANG_TRIPLE=aarch64-linux-gnu- \
-                      CROSS_COMPILE="${PWD}/clang/bin/aarch64-linux-gnu-" \
-                      CROSS_COMPILE_ARM32="${PWD}/clang/bin/arm-linux-gnueabi-" \
-		      LD=ld.lld \
-                      STRIP=llvm-strip \
-                      AS=llvm-as \
-		      AR=llvm-ar \
-		      NM=llvm-nm \
-		      OBJCOPY=llvm-objcopy \
-   		      OBJDUMP=llvm-objdump \
-                      CONFIG_NO_ERROR_ON_MISMATCH=y 2>&1 | tee error.log 
-}
+[ "$CLEAN_BUILD" = true ] && rm -rf out
+[ "$INCLUDE_KSU" = true ] && echo "Save your stuff!!" && curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5
 
-function zupload()
-{
-rm -rf AnyKernel	
-git clone --depth=1 https://github.com/AbzRaider/AnyKernel33 -b ares AnyKernel
-cp out/arch/arm64/boot/Image.gz-dtb AnyKernel
-cd AnyKernel
-zip -r9 Test-OSS-KERNEL-ARES-S.zip *
-curl --upload-file "Test-OSS-KERNEL-ARES-S.zip" https://free.keep.sh
-}
-compile
-zupload
+# Compilation process
+mkdir -p out
+make O=out ARCH=arm64 CC="ccache clang" HOSTCC=clang HOSTCXX=clang++ LLVM=1 LLVM_IAS=1 CROSS_COMPILE=aarch64-linux-gnu- CROSS_COMPILE_ARM32=arm-linux-gnueabi- $DEFCONFIG
+
+echo -e "\nStarting compilation...\n"
+if make -j$(nproc --all) O=out ARCH=arm64 CC="ccache clang" HOSTCC=clang HOSTCXX=clang++ LLVM=1 LLVM_IAS=1 OBJDUMP=llvm-objdump CROSS_COMPILE=aarch64-linux-gnu- CROSS_COMPILE_ARM32=arm-linux-gnueabi- Image.gz; then
+  echo -e "\nKernel compiled successfully! Zipping up...\n"
+  git clone -q --depth=1 https://github.com/rio004/AnyKernel3 AnyKernel3
+  cp out/arch/arm64/boot/Image.gz AnyKernel3
+  rm -rf *zip out/arch/arm64/boot
+  (cd AnyKernel3 && zip -r9 "../$ZIPNAME" * -x '*.git*' README.md *placeholder)
+  rm -rf AnyKernel3
+  if [ "$INCLUDE_KSU" = true ]; then
+    git restore drivers/{Makefile,Kconfig}
+    rm -rf KernelSU drivers/kernelsu
+  fi
+  echo -e "\nCompleted in $((SECONDS / 60)) minute(s) and $((SECONDS % 60)) second(s)!"
+  echo "Zip: $ZIPNAME"
+else
+  echo -e "\nCompilation failed!"
+fi
