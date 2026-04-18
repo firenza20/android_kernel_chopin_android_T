@@ -1,0 +1,461 @@
+scripts/kconfig/conf -s --silentoldconfig Kconfig
+drivers/input/touchscreen/Kconfig:48:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:8:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:14:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:19:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:28:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:34:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:40:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:46:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:54:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:60:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:66:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:72:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:78:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:84:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:90:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:96:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:102:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:108:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:116:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:121:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:127:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:133:warning: ignoring unsupported character '+'
+drivers/input/touchscreen/hxchipset/Kconfig:17:warning: choice value used outside its choice group
+drivers/input/touchscreen/hxchipset/Kconfig:23:warning: choice value used outside its choice group
+../scripts/mod/modpost.c:811:9: warning: assigning to 'char *' from 'const char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                        here = strstr(sym, bare);
+                             ^ ~~~~~~~~~~~~~~~~~
+../scripts/extract-cert.c:46:14: warning: 'ERR_get_error_line' is deprecated [-Wdeprecated-declarations]
+        while ((e = ERR_get_error_line(&file, &line))) {
+                    ^
+/usr/include/openssl/err.h:425:1: note: 'ERR_get_error_line' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:229:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+../scripts/extract-cert.c:59:9: warning: 'ERR_get_error_line' is deprecated [-Wdeprecated-declarations]
+        while (ERR_get_error_line(&file, &line)) {}
+               ^
+/usr/include/openssl/err.h:425:1: note: 'ERR_get_error_line' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:229:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+../scripts/extract-cert.c:124:3: warning: 'ENGINE_load_builtin_engines' is deprecated [-Wdeprecated-declarations]
+                ENGINE_load_builtin_engines();
+                ^
+/usr/include/openssl/engine.h:358:1: note: 'ENGINE_load_builtin_engines' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 void ENGINE_load_builtin_engines(void);
+^
+/usr/include/openssl/macros.h:229:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+../scripts/extract-cert.c:126:7: warning: 'ENGINE_by_id' is deprecated [-Wdeprecated-declarations]
+                e = ENGINE_by_id("pkcs11");
+                    ^
+/usr/include/openssl/engine.h:336:1: note: 'ENGINE_by_id' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 ENGINE *ENGINE_by_id(const char *id);
+^
+/usr/include/openssl/macros.h:229:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+../scripts/extract-cert.c:128:7: warning: 'ENGINE_init' is deprecated [-Wdeprecated-declarations]
+                if (ENGINE_init(e))
+                    ^
+/usr/include/openssl/engine.h:622:1: note: 'ENGINE_init' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int ENGINE_init(ENGINE *e);
+^
+/usr/include/openssl/macros.h:229:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+../scripts/extract-cert.c:133:9: warning: 'ENGINE_ctrl_cmd_string' is deprecated [-Wdeprecated-declarations]
+                        ERR(!ENGINE_ctrl_cmd_string(e, "PIN", key_pass, 0), "Set PKCS#11 PIN");
+                             ^
+/usr/include/openssl/engine.h:478:1: note: 'ENGINE_ctrl_cmd_string' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:229:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+../scripts/extract-cert.c:134:3: warning: 'ENGINE_ctrl_cmd' is deprecated [-Wdeprecated-declarations]
+                ENGINE_ctrl_cmd(e, "LOAD_CERT_CTRL", 0, &parms, NULL, 1);
+                ^
+/usr/include/openssl/engine.h:450:1: note: 'ENGINE_ctrl_cmd' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int ENGINE_ctrl_cmd(ENGINE *e, const char *cmd_name,
+^
+/usr/include/openssl/macros.h:229:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+7 warnings generated.
+1 warning generated.
+../arch/arm64/kernel/entry.S:454:2: warning: DWARF2 only supports one section per compilation unit
+ .pushsection ".entry.text", "ax"
+ ^
+<instantiation>:5:2: warning: DWARF2 only supports one section per compilation unit
+ .pushsection .altinstr_replacement, "ax"
+ ^
+<instantiation>:3:1: note: while in macro instantiation
+alternative_if 23
+^
+../arch/arm64/kernel/entry.S:458:2: note: while in macro instantiation
+ kernel_ventry 1, sync_invalid
+ ^
+../arch/arm64/kernel/entry.S:1040:2: warning: DWARF2 only supports one section per compilation unit
+ .pushsection ".entry.tramp.text", "ax"
+ ^
+<instantiation>:3:2: warning: DWARF2 only supports one section per compilation unit
+ .pushsection .altinstr_replacement, "ax"
+ ^
+<instantiation>:1:1: note: while in macro instantiation
+alternative_else
+^
+<instantiation>:5:1: note: while in macro instantiation
+alternative_else_nop_endif
+^
+../arch/arm64/mm/cache.S:52:2: note: while in macro instantiation
+ uaccess_ttbr0_enable x2, x3, x4
+ ^
+../arch/arm64/kernel/hyp-stub.S:31:2: warning: DWARF2 only supports one section per compilation unit
+ .pushsection .hyp.text, "ax"
+ ^
+<instantiation>:3:2: warning: DWARF2 only supports one section per compilation unit
+ .pushsection .altinstr_replacement, "ax"
+ ^
+../arch/arm64/mm/proc.S:84:1: note: while in macro instantiation
+alternative_else
+^
+../arch/arm64/mm/proc.S:107:2: warning: DWARF2 only supports one section per compilation unit
+ .pushsection ".idmap.text", "awx"
+ ^
+<instantiation>:3:2: warning: DWARF2 only supports one section per compilation unit
+ .pushsection .altinstr_replacement, "ax"
+ ^
+<instantiation>:1:1: note: while in macro instantiation
+alternative_else
+^
+<instantiation>:5:1: note: while in macro instantiation
+alternative_else_nop_endif
+^
+../arch/arm64/mm/cache-mtk-v8.S:294:2: note: while in macro instantiation
+ uaccess_ttbr0_enable x2, x3, x4
+ ^
+-- Baseband-guard: flask.h not found, starting generation
+grep: warning: stray \ before #
+-- Baseband-guard: CONFIG_BBG enabled, now checking...
+-- Kernel Version: 4.14
+-- Baseband-guard: Okay,seems this Kernel doesn't need to check config.
+-- BBG was enabled!
+-- BBG version: 51887ce3
+-- BBG repo: https://github.com/vc-teahouse/Baseband-guard
+../arch/arm64/kernel/sleep.S:99:2: warning: DWARF2 only supports one section per compilation unit
+ .pushsection ".idmap.text", "awx"
+ ^
+../arch/arm64/kernel/head.S:73:2: warning: DWARF2 only supports one section per compilation unit
+ .section ".head.text","ax"
+ ^
+../arch/arm64/kernel/head.S:105:2: warning: DWARF2 only supports one section per compilation unit
+ .section ".init.text","ax"
+ ^
+../arch/arm64/kernel/head.S:381:2: warning: DWARF2 only supports one section per compilation unit
+ .section ".idmap.text","awx"
+ ^
+../block/blk-mq.c:569:44: warning: passing 8-byte aligned argument to 32-byte aligned parameter 2 of 'smp_call_function_single_async' may result in an unaligned pointer access [-Walign-mismatch]
+                smp_call_function_single_async(ctx->cpu, &rq->csd);
+                                                         ^
+1 warning generated.
+<instantiation>:3:2: warning: DWARF2 only supports one section per compilation unit
+ .pushsection .altinstr_replacement, "ax"
+ ^
+<instantiation>:1:1: note: while in macro instantiation
+alternative_else
+^
+<instantiation>:5:1: note: while in macro instantiation
+alternative_else_nop_endif
+^
+<instantiation>:1:1: note: while in macro instantiation
+uaccess_ttbr0_enable x2, x3, x4
+^
+../arch/arm64/lib/clear_user.S:33:2: note: while in macro instantiation
+ uaccess_enable_not_uao x2, x3, x4
+ ^
+../arch/arm64/lib/clear_user.S:57:2: warning: DWARF2 only supports one section per compilation unit
+ .section .fixup,"ax"
+ ^
+<instantiation>:3:2: warning: DWARF2 only supports one section per compilation unit
+ .pushsection .altinstr_replacement, "ax"
+ ^
+<instantiation>:1:1: note: while in macro instantiation
+alternative_else
+^
+<instantiation>:5:1: note: while in macro instantiation
+alternative_else_nop_endif
+^
+<instantiation>:1:1: note: while in macro instantiation
+uaccess_ttbr0_enable x3, x4, x5
+^
+../arch/arm64/lib/copy_from_user.S:67:2: note: while in macro instantiation
+ uaccess_enable_not_uao x3, x4, x5
+ ^
+../arch/arm64/lib/copy_from_user.S:75:2: warning: DWARF2 only supports one section per compilation unit
+ .section .fixup,"ax"
+ ^
+<instantiation>:3:2: warning: DWARF2 only supports one section per compilation unit
+ .pushsection .altinstr_replacement, "ax"
+ ^
+<instantiation>:1:1: note: while in macro instantiation
+alternative_else
+^
+<instantiation>:5:1: note: while in macro instantiation
+alternative_else_nop_endif
+^
+<instantiation>:1:1: note: while in macro instantiation
+uaccess_ttbr0_enable x3, x4, x5
+^
+../arch/arm64/lib/copy_in_user.S:69:2: note: while in macro instantiation
+ uaccess_enable_not_uao x3, x4, x5
+ ^
+../arch/arm64/lib/copy_in_user.S:77:2: warning: DWARF2 only supports one section per compilation unit
+ .section .fixup,"ax"
+ ^
+<instantiation>:5:2: warning: DWARF2 only supports one section per compilation unit
+ .pushsection .altinstr_replacement, "ax"
+ ^
+../arch/arm64/lib/copy_page.S:32:1: note: while in macro instantiation
+alternative_if 8
+^
+<instantiation>:3:2: warning: DWARF2 only supports one section per compilation unit
+ .pushsection .altinstr_replacement, "ax"
+ ^
+<instantiation>:1:1: note: while in macro instantiation
+alternative_else
+^
+<instantiation>:5:1: note: while in macro instantiation
+alternative_else_nop_endif
+^
+<instantiation>:1:1: note: while in macro instantiation
+uaccess_ttbr0_enable x3, x4, x5
+^
+../arch/arm64/lib/copy_to_user.S:66:2: note: while in macro instantiation
+ uaccess_enable_not_uao x3, x4, x5
+ ^
+../arch/arm64/lib/copy_to_user.S:74:2: warning: DWARF2 only supports one section per compilation unit
+ .section .fixup,"ax"
+ ^
+../kernel/sched/fair.c:11121:8: warning: ISO C90 forbids mixing declarations and code [-Wdeclaration-after-statement]
+                        int cpu = env.dst_cpu;
+                            ^
+1 warning generated.
+../kernel/time/timer_list_aee.c:44:5: warning: 'CONFIG_TIMER_AEE_FULL_DUMP' is not defined, evaluates to 0 [-Wundef]
+#if CONFIG_TIMER_AEE_FULL_DUMP
+    ^
+../kernel/time/timer_list_aee.c:60:5: warning: 'CONFIG_TIMER_AEE_FULL_DUMP' is not defined, evaluates to 0 [-Wundef]
+#if CONFIG_TIMER_AEE_FULL_DUMP
+    ^
+2 warnings generated.
+../drivers/i2c/busses/i2c-mtk.c:819:3: warning: add explicit braces to avoid dangling else [-Wdangling-else]
+                else {
+                ^
+1 warning generated.
+In file included from ../drivers/input/touchscreen/NVT36672c/nt36xxx.c:50:
+../drivers/input/touchscreen/NVT36672c/../../../gpu/drm/mediatek/mtk_disp_recovery.h:44:39: warning: declaration of 'struct drm_crtc' will not be visible outside of this function [-Wvisibility]
+void mtk_disp_esd_check_switch(struct drm_crtc *crtc, bool enable);
+                                      ^
+../drivers/input/touchscreen/NVT36672c/../../../gpu/drm/mediatek/mtk_disp_recovery.h:45:47: warning: declaration of 'struct drm_crtc' will not be visible outside of this function [-Wvisibility]
+void mi_disp_err_flag_esd_check_switch(struct drm_crtc *crtc, bool enable);
+                                              ^
+../drivers/input/touchscreen/NVT36672c/../../../gpu/drm/mediatek/mtk_disp_recovery.h:46:39: warning: declaration of 'struct drm_crtc' will not be visible outside of this function [-Wvisibility]
+void mtk_disp_chk_recover_init(struct drm_crtc *crtc);
+                                      ^
+3 warnings generated.
+In file included from ../drivers/input/touchscreen/NVT36672c/nt36xxx_fw_update.c:29:
+../drivers/input/touchscreen/NVT36672c/../../../gpu/drm/mediatek/mtk_disp_recovery.h:44:39: warning: declaration of 'struct drm_crtc' will not be visible outside of this function [-Wvisibility]
+void mtk_disp_esd_check_switch(struct drm_crtc *crtc, bool enable);
+                                      ^
+../drivers/input/touchscreen/NVT36672c/../../../gpu/drm/mediatek/mtk_disp_recovery.h:45:47: warning: declaration of 'struct drm_crtc' will not be visible outside of this function [-Wvisibility]
+void mi_disp_err_flag_esd_check_switch(struct drm_crtc *crtc, bool enable);
+                                              ^
+../drivers/input/touchscreen/NVT36672c/../../../gpu/drm/mediatek/mtk_disp_recovery.h:46:39: warning: declaration of 'struct drm_crtc' will not be visible outside of this function [-Wvisibility]
+void mtk_disp_chk_recover_init(struct drm_crtc *crtc);
+                                      ^
+3 warnings generated.
+../drivers/iommu/mtk_iommu_v2.c:1676:1: warning: unused label 'out' [-Wunused-label]
+out:
+^~~~
+../drivers/iommu/mtk_iommu_v2.c:2659:8: warning: operator '<<' has lower precedence than '+'; '+' will be evaluated first [-Wshift-op-parentheses]
+                   | F_READ_ENTRY_MAIN_IDX(m4u_slave_id, idx);
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../drivers/misc/mediatek/include/mt-plat/mt6885/include/mach/mt_iommu_plat.h:235:30: note: expanded from macro 'F_READ_ENTRY_MAIN_IDX'
+        F_VAL(idx, 19 + mmu * 6, 14 + mmu * 6)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+../drivers/misc/mediatek/include/mt-plat/mt6885/include/mach/pseudo_m4u.h:325:61: note: expanded from macro 'F_VAL'
+#define F_VAL(val, msb, lsb) (((val)&((1<<(msb-lsb+1))-1))<<lsb)
+                                                          ~~^~~
+../drivers/iommu/mtk_iommu_v2.c:2659:8: note: place parentheses around the '+' expression to silence this warning
+                   | F_READ_ENTRY_MAIN_IDX(m4u_slave_id, idx);
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../drivers/misc/mediatek/include/mt-plat/mt6885/include/mach/mt_iommu_plat.h:235:30: note: expanded from macro 'F_READ_ENTRY_MAIN_IDX'
+        F_VAL(idx, 19 + mmu * 6, 14 + mmu * 6)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+../drivers/misc/mediatek/include/mt-plat/mt6885/include/mach/pseudo_m4u.h:325:61: note: expanded from macro 'F_VAL'
+#define F_VAL(val, msb, lsb) (((val)&((1<<(msb-lsb+1))-1))<<lsb)
+                                                            ^~~
+2 warnings generated.
+-- ReSukiSU version code: 34822
+-- ReSukiSU version name: v4.1.0-13be3c7e@ReSukiSU
+-- Supported Unofficial Manager: MKSU, RKSU, KOWSU, SukiSU-Ultra, ReSukiSU 
+-- ReSukiSU: using SUSFS_INLINE_HOOK
+-- KERNEL_VERSION: 4.14
+-- KERNEL_TYPE: Non-GKI
+-- KPM is enabled
+-- WARNING, This feature is unstable!!! You are WARNED!!!
+-- ReSukiSU/compat: current_sid found
+-- ReSukiSU/compat: selinux_state found
+-- ReSukiSU/compat: kernel_read found
+-- ReSukiSU/compat: kernel_write found
+-- ReSukiSU/compat: path_umount found
+-- ReSukiSU/compat: selinux_inode found
+-- ReSukiSU/compat: selinux_cred found
+-- ReSukiSU/compat: seccomp_filter_count found
+-- ReSukiSU/compat: vfs_getattr() found
+-- ReSukiSU/compat: file_inode() found
+-- ReSukiSU/compat: ns_get_path found
+-- ReSukiSU/compat: modern dentry_open found
+-- ReSukiSU/compat: ext4_unregister_sysfs found
+-- ReSukiSU/compat: f_op->read_iter found
+-- ReSukiSU/compat: iterate_dir found
+-- ReSukiSU/compat: modern static_key_interface found
+-- ReSukiSU/compat: d_inode found
+-- ReSukiSU/compat: time64_to_tm found
+-- ReSukiSU/compat: ktime_get_ns found
+-- ReSukiSU/compat: inode_lock found
+-- ReSukiSU/compat: modern errno file found
+-- ReSukiSU/compat: overflow.h found
+-- ReSukiSU/compat: modern proc ns header file found
+-- ReSukiSU/susfs_inline: ksu_handle_setresuid found
+-- ReSukiSU/susfs_inline: ksu_handle_execveat found
+-- ReSukiSU/susfs_inline: ksu_handle_faccessat found
+-- ReSukiSU/susfs_inline: ksu_handle_stat found
+-- ReSukiSU/susfs_inline: ksu_handle_sys_reboot found
+-- ReSukiSU/susfs_inline: ksu_handle_input_handle_event found
+
+-- SUSFS_VERSION: v2.1.0
+../drivers/md/dm-verity-target.c:625:21: warning: '&&' within '||' [-Wlogical-op-parentheses]
+        if (bio->bi_status &&
+            ~~~~~~~~~~~~~~~^~
+../drivers/md/dm-verity-target.c:625:21: note: place parentheses around the '&&' expression to silence this warning
+        if (bio->bi_status &&
+                           ^
+            (
+1 warning generated.
+../drivers/pinctrl/mediatek/mtk-eint.c:119:6: warning: ISO C90 forbids mixing declarations and code [-Wdeclaration-after-statement]
+        u32 mask = BIT(d->hwirq & 0x1f);
+            ^
+1 warning generated.
+../drivers/power/supply/ti_ares/pd_policy_manager.c:32:9: warning: 'pr_debug' macro redefined [-Wmacro-redefined]
+#define pr_debug pr_err
+        ^
+../include/linux/printk.h:392:9: note: previous definition is here
+#define pr_debug(fmt, ...) \
+        ^
+../drivers/power/supply/ti_ares/pd_policy_manager.c:1214:47: warning: '&&' within '||' [-Wlogical-op-parentheses]
+        if (pdpm->cp.ibat_curr > 0 && ibus_total > 0 && steps > 0 || effective_fcc_val == 0) {
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~ ~~
+../drivers/power/supply/ti_ares/pd_policy_manager.c:1214:47: note: place parentheses around the '&&' expression to silence this warning
+        if (pdpm->cp.ibat_curr > 0 && ibus_total > 0 && steps > 0 || effective_fcc_val == 0) {
+                                                     ^
+            (                                                    )
+2 warnings generated.
+../drivers/power/supply/ti_ares/cp_qc30.c:60:9: warning: 'pr_debug' macro redefined [-Wmacro-redefined]
+#define pr_debug pr_err
+        ^
+../include/linux/printk.h:392:9: note: previous definition is here
+#define pr_debug(fmt, ...) \
+        ^
+1 warning generated.
+..
+../drivers/misc/mediatek/base/power/qos/Makefile:46: extraneous text after 'else' directive
+../drivers/staging/android/ion/ion.c:1448:1: warning: unused label 'retry' [-Wunused-label]
+retry:
+^~~~~~
+1 warning generated.
+../drivers/staging/android/ion/mtk/ion_mm_heap.c:957:36: warning: '&&' within '||' [-Wlogical-op-parentheses]
+            (buffer->sg_table->nents > 10 &&
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+../drivers/staging/android/ion/mtk/ion_mm_heap.c:957:36: note: place parentheses around the '&&' expression to silence this warning
+            (buffer->sg_table->nents > 10 &&
+                                          ^
+             (
+1 warning generated.
+../drivers/misc/mediatek/gpu/ged/src/ged_dvfs.c:1020:8: warning: ISO C90 forbids mixing declarations and code [-Wdeclaration-after-statement]
+                        int i32NewFreqID =
+                            ^
+1 warning generated.
+mali MTK evironment, building r32p1 DDK
+mtk-Kbuild CONFIG_MALI_PLATFORM_THIRDPARTY := y
+mtk-Kbuild CONFIG_MALI_PLATFORM_THIRDPARTY_NAME := "mt6893"
+*GPU defined GPU BM QoS 2.0
+mali MTK evironment, building r32p1 DDK
+mtk-Kbuild CONFIG_MALI_PLATFORM_THIRDPARTY := y
+mtk-Kbuild CONFIG_MALI_PLATFORM_THIRDPARTY_NAME := "mt6893"
+*GPU defined GPU BM QoS 2.0
+mali MTK evironment, building r32p1 DDK
+mtk-Kbuild CONFIG_MALI_PLATFORM_THIRDPARTY := y
+mtk-Kbuild CONFIG_MALI_PLATFORM_THIRDPARTY_NAME := "mt6893"
+*GPU defined GPU BM QoS 2.0
+../drivers/misc/mediatek/connectivity/wlan/core/gen4m/chips/common/fw_dl.c:2393:9: warning: ROM code supports no SEM-CTRL for ROM patch download [-W#pragma-messages]
+#pragma message("ROM code supports no SEM-CTRL for ROM patch download")
+        ^
+1 warning generated.
+../drivers/misc/mediatek/connectivity/wlan/core/gen4m/chips/soc3_0/soc3_0.c:2912:9: warning: SOC3_0::CFG_POWER_ON_DOWNLOAD_EMI_ROM_PATCH == 1 [-W#pragma-messages]
+#pragma message("SOC3_0::CFG_POWER_ON_DOWNLOAD_EMI_ROM_PATCH == 1")
+        ^
+../drivers/misc/mediatek/connectivity/wlan/core/gen4m/chips/soc3_0/soc3_0.c:3389:9: warning: ROM code supports no SEM-CTRL for ROM patch download [-W#pragma-messages]
+#pragma message("ROM code supports no SEM-CTRL for ROM patch download")
+        ^
+2 warnings generated.
+../drivers/misc/mediatek/teei/400/tz_driver/teei_smc_call.c:22:9: warning: 'IMSG_TAG' macro redefined [-Wmacro-redefined]
+#define IMSG_TAG "[tz_driver]"
+        ^
+../drivers/misc/mediatek/teei/400/common/include/imsg_log.h:12:9: note: previous definition is here
+#define IMSG_TAG "[ISEE DRV]"
+        ^
+1 warning generated.
+../drivers/misc/mediatek/thermal/common/coolers/Makefile:278: 3 liaoye "mt6885"
+../drivers/misc/mediatek/teei/400/tz_driver/switch_queue.c:39:9: warning: 'IMSG_TAG' macro redefined [-Wmacro-redefined]
+#define IMSG_TAG "[tz_driver]"
+        ^
+../drivers/misc/mediatek/teei/400/common/include/imsg_log.h:12:9: note: previous definition is here
+#define IMSG_TAG "[ISEE DRV]"
+        ^
+1 warning generated.
+../drivers/misc/mediatek/teei/400/tz_driver/teei_smc_call.c:22:9: warning: 'IMSG_TAG' macro redefined [-Wmacro-redefined]
+#define IMSG_TAG "[tz_driver]"
+        ^
+../drivers/misc/mediatek/teei/400/common/include/imsg_log.h:12:9: note: previous definition is here
+#define IMSG_TAG "[ISEE DRV]"
+        ^
+1 warning generated.
