@@ -122,8 +122,10 @@ all.config
 
 # Kdevelop4
 *.kdev4
-
+*.patch
 # fetched Android config fragments
 kernel/configs/android-*.cfg
 out/
 KernelSU/
+*patches.sh
+
