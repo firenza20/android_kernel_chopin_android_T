@@ -26,6 +26,10 @@
 #include "mount.h"
 
 extern bool susfs_is_current_ksu_domain(void);
+#ifdef CONFIG_KSU_SUSFS
+extern struct static_key_false ksu_init_rc_hook_key_false;
+extern struct static_key_false ksu_input_hook_key_false;
+#endif
 
 #ifdef CONFIG_KSU_SUSFS_ENABLE_LOG
 DEFINE_STATIC_KEY_TRUE(susfs_log_key);
