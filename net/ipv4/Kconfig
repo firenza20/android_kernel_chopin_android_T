@@ -678,7 +678,7 @@ config TCP_CONG_BBR
 
 choice
 	prompt "Default TCP congestion control"
-	default DEFAULT_BIC
+	default DEFAULT_CUBIC
 	help
 	  Select the TCP congestion control that will be used by default
 	  for all connections.
@@ -726,8 +726,8 @@ config TCP_CONG_CUBIC
 
 config DEFAULT_TCP_CONG
 	string
-	default "bic" if DEFAULT_BIC
 	default "cubic" if DEFAULT_CUBIC
+	default "bic" if DEFAULT_BIC
 	default "htcp" if DEFAULT_HTCP
 	default "hybla" if DEFAULT_HYBLA
 	default "vegas" if DEFAULT_VEGAS
