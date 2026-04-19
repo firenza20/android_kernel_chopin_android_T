@@ -128,4 +128,5 @@ kernel/configs/android-*.cfg
 out/
 KernelSU/
 *patches.sh
+error.log
 

@@ -160,6 +160,9 @@ alternative_else_nop_endif
 ../arch/arm64/mm/cache-mtk-v8.S:294:2: note: while in macro instantiation
  uaccess_ttbr0_enable x2, x3, x4
  ^
+../arch/arm64/kernel/hyp-stub.S:31:2: warning: DWARF2 only supports one section per compilation unit
+ .pushsection .hyp.text, "ax"
+ ^
 -- Baseband-guard: flask.h not found, starting generation
 grep: warning: stray \ before #
 -- Baseband-guard: CONFIG_BBG enabled, now checking...
@@ -168,9 +171,6 @@ grep: warning: stray \ before #
 -- BBG was enabled!
 -- BBG version: 8cb6b7f4
 -- BBG repo: https://github.com/vc-teahouse/Baseband-guard
-../arch/arm64/kernel/hyp-stub.S:31:2: warning: DWARF2 only supports one section per compilation unit
- .pushsection .hyp.text, "ax"
- ^
 ../arch/arm64/kernel/sleep.S:99:2: warning: DWARF2 only supports one section per compilation unit
  .pushsection ".idmap.text", "awx"
  ^
@@ -280,47 +280,6 @@ uaccess_ttbr0_enable x3, x4, x5
                 else {
                 ^
 1 warning generated.
--- ReSukiSU version code: 34830
--- ReSukiSU version name: v4.1.0-b6ec6e08@ReSukiSU
--- Supported Unofficial Manager: MKSU, RKSU, KOWSU, SukiSU-Ultra, ReSukiSU 
--- ReSukiSU: using SUSFS_INLINE_HOOK
--- KERNEL_VERSION: 4.14
--- KERNEL_TYPE: Non-GKI
--- KPM is enabled
--- WARNING, This feature is unstable!!! You are WARNED!!!
--- ReSukiSU/compat: current_sid found
--- ReSukiSU/compat: selinux_state found
--- ReSukiSU/compat: strncpy found
--- ReSukiSU/compat: kernel_read found
--- ReSukiSU/compat: kernel_write found
--- ReSukiSU/compat: path_umount found
--- ReSukiSU/compat: selinux_inode found
--- ReSukiSU/compat: selinux_cred found
--- ReSukiSU/compat: seccomp_filter_count found
--- ReSukiSU/compat: vfs_getattr() found
--- ReSukiSU/compat: file_inode() found
--- ReSukiSU/compat: ns_get_path found
--- ReSukiSU/compat: modern dentry_open found
--- ReSukiSU/compat: ext4_unregister_sysfs found
--- ReSukiSU/compat: f_op->read_iter found
--- ReSukiSU/compat: iterate_dir found
--- ReSukiSU/compat: modern static_key_interface found
--- ReSukiSU/compat: d_inode found
--- ReSukiSU/compat: time64_to_tm found
--- ReSukiSU/compat: ktime_get_ns found
--- ReSukiSU/compat: inode_lock found
--- ReSukiSU/compat: modern errno file found
--- ReSukiSU/compat: overflow.h found
--- ReSukiSU/compat: modern proc ns header file found
--- ReSukiSU/susfs_inline: ksu_handle_setresuid found
--- ReSukiSU/susfs_inline: ksu_handle_execveat found
--- ReSukiSU/susfs_inline: ksu_handle_faccessat found
--- ReSukiSU/susfs_inline: ksu_handle_sys_read found
--- ReSukiSU/susfs_inline: ksu_handle_stat found
--- ReSukiSU/susfs_inline: ksu_handle_sys_reboot found
--- ReSukiSU/susfs_inline: ksu_handle_input_handle_event found
-
--- SUSFS_VERSION: v2.1.0
 In file included from ../drivers/input/touchscreen/NVT36672c/nt36xxx.c:50:
 ../drivers/input/touchscreen/NVT36672c/../../../gpu/drm/mediatek/mtk_disp_recovery.h:44:39: warning: declaration of 'struct drm_crtc' will not be visible outside of this function [-Wvisibility]
 void mtk_disp_esd_check_switch(struct drm_crtc *crtc, bool enable);
@@ -365,6 +324,47 @@ out:
 #define F_VAL(val, msb, lsb) (((val)&((1<<(msb-lsb+1))-1))<<lsb)
                                                             ^~~
 2 warnings generated.
+-- ReSukiSU version code: 34830
+-- ReSukiSU version name: v4.1.0-b6ec6e08@ReSukiSU
+-- Supported Unofficial Manager: MKSU, RKSU, KOWSU, SukiSU-Ultra, ReSukiSU 
+-- ReSukiSU: using SUSFS_INLINE_HOOK
+-- KERNEL_VERSION: 4.14
+-- KERNEL_TYPE: Non-GKI
+-- KPM is enabled
+-- WARNING, This feature is unstable!!! You are WARNED!!!
+-- ReSukiSU/compat: current_sid found
+-- ReSukiSU/compat: selinux_state found
+-- ReSukiSU/compat: strncpy found
+-- ReSukiSU/compat: kernel_read found
+-- ReSukiSU/compat: kernel_write found
+-- ReSukiSU/compat: path_umount found
+-- ReSukiSU/compat: selinux_inode found
+-- ReSukiSU/compat: selinux_cred found
+-- ReSukiSU/compat: seccomp_filter_count found
+-- ReSukiSU/compat: vfs_getattr() found
+-- ReSukiSU/compat: file_inode() found
+-- ReSukiSU/compat: ns_get_path found
+-- ReSukiSU/compat: modern dentry_open found
+-- ReSukiSU/compat: ext4_unregister_sysfs found
+-- ReSukiSU/compat: f_op->read_iter found
+-- ReSukiSU/compat: iterate_dir found
+-- ReSukiSU/compat: modern static_key_interface found
+-- ReSukiSU/compat: d_inode found
+-- ReSukiSU/compat: time64_to_tm found
+-- ReSukiSU/compat: ktime_get_ns found
+-- ReSukiSU/compat: inode_lock found
+-- ReSukiSU/compat: modern errno file found
+-- ReSukiSU/compat: overflow.h found
+-- ReSukiSU/compat: modern proc ns header file found
+-- ReSukiSU/susfs_inline: ksu_handle_setresuid found
+-- ReSukiSU/susfs_inline: ksu_handle_execveat found
+-- ReSukiSU/susfs_inline: ksu_handle_faccessat found
+-- ReSukiSU/susfs_inline: ksu_handle_sys_read found
+-- ReSukiSU/susfs_inline: ksu_handle_stat found
+-- ReSukiSU/susfs_inline: ksu_handle_sys_reboot found
+-- ReSukiSU/susfs_inline: ksu_handle_input_handle_event found
+
+-- SUSFS_VERSION: v2.1.0
 ../drivers/memory/mediatek/emimpu.c:27:1: warning: 'static' ignored on this declaration [-Wmissing-declarations]
 static struct emimpu_callbacks {
 ^
@@ -382,6 +382,7 @@ static struct emimpu_callbacks {
             ^
 1 warning generated.
 ..
+../drivers/misc/mediatek/base/power/qos/Makefile:46: extraneous text after 'else' directive
 ../drivers/power/supply/ti_ares/pd_policy_manager.c:32:9: warning: 'pr_debug' macro redefined [-Wmacro-redefined]
 #define pr_debug pr_err
         ^
@@ -403,7 +404,6 @@ static struct emimpu_callbacks {
 #define pr_debug(fmt, ...) \
         ^
 1 warning generated.
-../drivers/misc/mediatek/base/power/qos/Makefile:46: extraneous text after 'else' directive
 ../drivers/staging/android/ion/ion.c:1448:1: warning: unused label 'retry' [-Wunused-label]
 retry:
 ^~~~~~
@@ -443,6 +443,7 @@ mtk-Kbuild CONFIG_MALI_PLATFORM_THIRDPARTY_NAME := "mt6893"
 #pragma message("ROM code supports no SEM-CTRL for ROM patch download")
         ^
 2 warnings generated.
+../drivers/misc/mediatek/thermal/common/coolers/Makefile:278: 3 liaoye "mt6885"
 ../drivers/misc/mediatek/teei/400/tz_driver/teei_smc_call.c:22:9: warning: 'IMSG_TAG' macro redefined [-Wmacro-redefined]
 #define IMSG_TAG "[tz_driver]"
         ^
@@ -450,7 +451,6 @@ mtk-Kbuild CONFIG_MALI_PLATFORM_THIRDPARTY_NAME := "mt6893"
 #define IMSG_TAG "[ISEE DRV]"
         ^
 1 warning generated.
-../drivers/misc/mediatek/thermal/common/coolers/Makefile:278: 3 liaoye "mt6885"
 ../drivers/misc/mediatek/teei/400/tz_driver/teei_smc_call.c:22:9: warning: 'IMSG_TAG' macro redefined [-Wmacro-redefined]
 #define IMSG_TAG "[tz_driver]"
         ^
