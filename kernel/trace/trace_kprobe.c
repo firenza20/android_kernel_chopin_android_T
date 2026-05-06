@@ -191,7 +191,7 @@ static void FETCH_FUNC_NAME(memory, string)(struct pt_regs *regs,
 	 * probing.
 	 * strncpy_from_user_nofault
 	 */
-	ret = strncpy_from_kernel_nofault(dst, addr, maxlen);
+	ret = strncpy_from_unsafe(dst, addr, maxlen);
 
 	if (ret < 0) {	/* Failed to fetch string */
 		dst[0] = '\0';
