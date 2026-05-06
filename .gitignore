@@ -128,4 +128,7 @@ kernel/configs/android-*.cfg
 out/
 KernelSU/
 *patches.sh
-
+*.gb6
+*.zip
+*dump.txt
+error.log

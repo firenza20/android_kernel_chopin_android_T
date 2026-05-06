@@ -1,15 +1,11 @@
 #!/bin/bash
-#
-# Compile script for Hydrogen kernel
-# Brought to you by rio004
-#
 
 SECONDS=0
 DATE=$(date '+%Y%m%d-%H%M')
 
 DEVICE="${1:-chopin}"
 DEFCONFIG="${DEVICE}_defconfig"
-ZIPNAME="Tiramisu-MTK-${DEVICE}-${DATE}.zip"
+ZIPNAME="Invincible-13-${DEVICE}-${DATE}.zip"
 
 echo -e "Building for: $DEVICE\n"
 
@@ -33,20 +29,13 @@ ccache -M 100G
 
 # Options
 CLEAN_BUILD=false
-INCLUDE_KSU=false
 for arg in "$@"; do
   case $arg in
     -c) CLEAN_BUILD=true ;;
-    -ksu)
-      INCLUDE_KSU=true
-      ZIPNAME="HydrogenKernel-KSU-${DEVICE}-${DATE}.zip"
-      ;;
   esac
 done
 
 [ "$CLEAN_BUILD" = true ] && rm -rf out
-[ "$INCLUDE_KSU" = true ] && echo "Save your stuff!!" && \
-  curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5
 
 mkdir -p out
 
@@ -75,15 +64,11 @@ echo -e "\nStarting compilation...\n"
 make -j$(nproc --all) "${MAKE_FLAGS[@]}" Image.gz 2>&1 | tee error.log
 if [ "${PIPESTATUS[0]}" -eq 0 ]; then
   echo -e "\nKernel compiled successfully! Zipping up...\n"
-  git clone -q --depth=1 https://github.com/rio004/AnyKernel3 AnyKernel3
+  git clone -q --depth=1 https://github.com/froyoandroid/AnyKernel3 AnyKernel3
   cp out/arch/arm64/boot/Image.gz AnyKernel3
   rm -rf *zip out/arch/arm64/boot
   (cd AnyKernel3 && zip -r9 "../$ZIPNAME" * -x '*.git*' README.md *placeholder)
   rm -rf AnyKernel3
-  if [ "$INCLUDE_KSU" = true ]; then
-    git restore drivers/{Makefile,Kconfig}
-    rm -rf KernelSU drivers/kernelsu
-  fi
   echo -e "\nCompleted in $((SECONDS / 60)) minute(s) and $((SECONDS % 60)) second(s)!"
   echo "Zip: $ZIPNAME"
 else
